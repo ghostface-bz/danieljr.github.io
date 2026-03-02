@@ -1,26 +1,349 @@
 @import "tailwindcss";
 
+/* ── Tokens ─────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:            #0b0a08;
+  --bg-2:          #0f0e0b;
+  --surface:       #141210;
+  --surface-2:     #1a1814;
+  --surface-3:     #201e19;
+  --accent:        #f59e0b;
+  --accent-hi:     #fcd34d;
+  --accent-lo:     #d97706;
+  --accent-muted:  rgba(245,158,11,0.07);
+  --accent-glow:   rgba(245,158,11,0.18);
+  --orange:        #fb923c;
+  --danger:        #ef4444;
+  --text:          #faf6ee;
+  --text-2:        #e2d9c8;
+  --text-muted:    #7d7468;
+  --text-faint:    #3d3830;
+  --border:        rgba(245,158,11,0.14);
+  --border-subtle: rgba(255,255,255,0.055);
+
+  --font-display:  var(--font-syne), "Syne", system-ui, sans-serif;
+  --font-body:     var(--font-dm), "DM Sans", system-ui, sans-serif;
+  --font-mono:     var(--font-mono), "JetBrains Mono", "Fira Code", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Reset ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Atmospheric Background ─────────────────── */
+.bg-layer {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+}
+/* warm radial glow */
+.bg-layer::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 45% at 5% 0%,  rgba(245,158,11,0.055) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 95% 95%, rgba(251,146,60,0.04)  0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(245,158,11,0.02)  0%, transparent 60%);
+}
+/* grain texture */
+.bg-layer::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+}
+
+/* ── Selection / Scrollbar ───────────────────── */
+::selection { background: var(--accent); color: #0b0a08; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent-lo); border-radius: 2px; }
+
+/* ── Typography Base ─────────────────────────── */
+h1, h2, h3, h4 { font-family: var(--font-display); }
+code, pre, .mono { font-family: var(--font-mono); }
+
+/* ── Keyframes ───────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(245,158,11,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+  100% { box-shadow: 0 0 0 0   rgba(245,158,11,0); }
+}
+@keyframes scan {
+  0%   { top: -6%; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 0.6; }
+  100% { top: 106%; opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 20px; }
+}
+@keyframes borderTrace {
+  0%   { clip-path: inset(0 100% 100% 0); }
+  25%  { clip-path: inset(0 0% 100% 0); }
+  50%  { clip-path: inset(0 0% 0% 0); }
+  75%  { clip-path: inset(0 0% 0% 0); }
+  100% { clip-path: inset(0 0% 0% 0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1.5deg); }
+  66%       { transform: translateY(-6px) rotate(-1deg); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes radarSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes termType {
+  from { opacity: 0; transform: translateX(-4px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Animate-in (scroll triggered) ──────────── */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.animate-visible {
+  animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Utilities ───────────────────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label .line {
+  display: inline-block;
+  height: 1px;
+  width: 20px;
+  background: var(--accent);
+  animation: lineGrow 0.5s ease forwards;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--accent-hi) 0%, var(--accent) 40%, var(--orange) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  border-color: var(--border);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(245,158,11,0.08);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.035);
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.07);
+  letter-spacing: 0.03em;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.tag:hover {
+  color: var(--accent);
+  border-color: rgba(245,158,11,0.3);
+  background: var(--accent-muted);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent 100%);
+}
+
+/* ── Responsive Section Padding ─────────────── */
+/* Overrides hardcoded 130px inline padding on all content sections */
+@media (max-width: 768px) {
+  #about, #experience, #projects, #skills, #contact {
+    padding-top: clamp(40px, 8vw, 64px) !important;
+    padding-bottom: clamp(40px, 8vw, 64px) !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── iOS Tap Highlight Removal ───────────────── */
+/* ui-ux-pro-max: hover-vs-tap — removes the default blue flash on iOS tap */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* ── Focus Visible ───────────────────────────── */
+/* ui-ux-pro-max: focus-states — visible ring for keyboard/switch navigation */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── Interactive Card Touch Feedback ─────────── */
+/* mobile-design: no hover on touch — every tappable card surface needs :active */
+/* Apply .icard to any div/element that acts as a button or link surface */
+.icard {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.icard:active {
+  background: var(--surface-2) !important;
+  border-color: rgba(245,158,11,0.22) !important;
+  transition: background 0.1s ease, border-color 0.1s ease !important;
+}
+
+/* Legacy .card class active state */
+.card:active {
+  background: var(--surface-2) !important;
+  border-color: rgba(245,158,11,0.22) !important;
+  transition: background 0.1s ease !important;
+}
+.tag:active {
+  color: var(--accent) !important;
+  border-color: rgba(245,158,11,0.3) !important;
+  background: var(--accent-muted) !important;
+}
+
+/* ── Section Description Spacing ────────────── */
+/* Inline marginBottom:64 is too large on phones */
+@media (max-width: 768px) {
+  .section-desc { margin-bottom: 36px !important; }
+}
+
+/* ── Mobile Scrollbar ────────────────────────── */
+/* Removes scrollbar chrome on phones — cleaner full-bleed feel */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar { display: none; }
+  body { scrollbar-width: none; }
+}
+
+/* ── Mobile Divider Spacing ──────────────────── */
+/* 90px inline margin-bottom is too much on phones */
+@media (max-width: 768px) {
+  .divider { margin-bottom: 32px !important; }
+}
+
+/* ── Mobile Grid Gap Overrides ───────────────── */
+/* Reduce vertical gap when two-col grids collapse to single column */
+@media (max-width: 768px) {
+  .exp-grid     { gap: 28px !important; }
+  .contact-grid { gap: 24px !important; }
+}
+
+/* ── Hero Terminal Marquee Strip ─────────────── */
+/* Hidden on desktop, shown as scrolling terminal data on mobile */
+.hero-mobile-strip {
+  display: none;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 900px) {
+  .hero-mobile-strip {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-top: 32px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  /* Fade edges for depth */
+  .hero-mobile-strip::before,
+  .hero-mobile-strip::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 48px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-mobile-strip::before { left: 0;  background: linear-gradient(90deg,  var(--bg), transparent); }
+  .hero-mobile-strip::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+  .hero-mobile-strip-inner {
+    display: inline-flex;
+    gap: 0;
+    white-space: nowrap;
+    animation: marquee 26s linear infinite;
+  }
+}
+
+/* ── Mobile ambient glow boost ───────────────── */
+/* Stronger atmospheric radial on small screens since there's less competing visual content */
+@media (max-width: 768px) {
+  .bg-layer::before {
+    background:
+      radial-gradient(ellipse 90% 55% at 5% 0%,  rgba(245,158,11,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 95% 95%, rgba(251,146,60,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 35% at 50% 50%, rgba(245,158,11,0.03) 0%, transparent 60%);
+  }
+}
+
+/* ── Prefers Reduced Motion ──────────────────── */
+/* ui-ux-pro-max: reduced-motion — respect OS-level accessibility setting */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .animate-visible {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .gradient-text {
+    animation: none !important;
+    background-position: 0 !important;
+  }
 }
