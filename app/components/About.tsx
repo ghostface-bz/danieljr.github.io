@@ -145,28 +145,52 @@ export default function About() {
 
       <style>{`
         @media (max-width: 768px) {
-          /* Collapse to single column; min-width:0 prevents grid blowout */
-          .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .about-grid > * { min-width: 0; overflow: hidden; }
+          /* Collapse to single column; prevent blowout */
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+          .about-grid > * { min-width: 0; max-width: 100%; }
           .about-hex-decor { display: none !important; }
 
-          /* Heading — scale with viewport so long words never clip */
+          /* Heading */
           .about-heading {
-            font-size: clamp(1.7rem, 7.5vw, 2.4rem) !important;
-            line-height: 1.05 !important;
+            font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
+            line-height: 1.08 !important;
             margin-bottom: 18px !important;
           }
 
-          /* Bio — readable size, words always wrap */
-          .about-bio { font-size: 0.9rem !important; line-height: 1.78 !important; gap: 13px !important; }
-          .about-bio p { overflow-wrap: break-word; word-break: break-word; }
+          /* Bio — words always wrap, never overflow */
+          .about-bio {
+            font-size: 0.88rem !important;
+            line-height: 1.78 !important;
+            gap: 12px !important;
+          }
+          .about-bio p {
+            overflow-wrap: break-word;
+            word-break: break-word;
+          }
 
-          /* Facts — single column, tighter card */
-          .about-facts { flex-direction: column !important; gap: 8px !important; }
-          .about-facts .icard { padding: 12px 14px !important; }
+          /* Facts — stay as flex column, compact cards */
+          .about-facts {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+          }
+          .about-facts .icard {
+            padding: 12px 14px !important;
+            gap: 12px !important;
+          }
+          .about-facts .icard > div:first-child {
+            width: 36px !important;
+            height: 36px !important;
+          }
 
-          /* Project card — tighter padding */
-          .about-project-wrap > div { padding: 15px 16px !important; margin-top: 2px !important; }
+          /* Project card — tighter */
+          .about-project-wrap > div {
+            padding: 16px !important;
+            margin-top: 2px !important;
+          }
         }
       `}</style>
     </section>

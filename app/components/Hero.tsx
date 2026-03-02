@@ -171,22 +171,22 @@ export default function Hero() {
 
         {/* ── LEFT: Text content ─────────────────────── */}
         <div>
-          {/* Available chip */}
-          <div style={{ marginBottom: 36, ...fadeStyle(0), maxWidth: "100%", overflow: "hidden" }}>
+          {/* Statement */}
+          <div style={{ marginBottom: 22, ...fadeStyle(0), maxWidth: "100%", overflow: "hidden" }}>
             <span style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.18)",
-              color: "var(--accent)", padding: "6px 16px 6px 10px",
-              borderRadius: 100, fontFamily: "var(--font-mono)",
-              fontSize: "clamp(0.58rem, 1.4vw, 0.65rem)", fontWeight: 500,
-              letterSpacing: "0.1em", textTransform: "uppercase",
+              display: "inline-flex", alignItems: "center", gap: 6,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.63rem", fontWeight: 500,
+              letterSpacing: "0.02em",
               maxWidth: "100%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
             }}>
               <span style={{
-                width: 6, height: 6, borderRadius: "50%", background: "var(--accent)",
-                flexShrink: 0, animation: "pulse-ring 2s ease-out infinite",
+                width: 5, height: 5, borderRadius: "50%", background: "#4ade80",
+                flexShrink: 0, boxShadow: "0 0 6px rgba(74,222,128,0.35)",
               }} />
-              Available · Dar es Salaam, Tanzania
+              <span style={{ color: "#4ade80", opacity: 0.8 }}>ready to build</span>
+              <span style={{ color: "var(--text-faint)", opacity: 0.2 }}>·</span>
+              <span style={{ color: "var(--accent)", opacity: 0.55 }}>Dar es Salaam, TZ</span>
             </span>
           </div>
 
@@ -226,7 +226,8 @@ export default function Hero() {
             ...fadeStyle(240),
             fontFamily: "var(--font-body)",
             fontSize: "1.02rem", color: "var(--text-muted)",
-            maxWidth: 520, lineHeight: 1.9, marginBottom: 44,
+            maxWidth: "min(520px, 100%)", lineHeight: 1.9, marginBottom: 44,
+            overflowWrap: "break-word", wordBreak: "break-word",
           }}>
             IT professional with hands-on field experience in{" "}
             <span style={{ color: "var(--text-2)", fontWeight: 500 }}>government & healthcare environments</span>.
@@ -442,42 +443,57 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 900px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 0 !important; max-width: 100% !important; }
+          .hero-grid > * { min-width: 0; max-width: 100%; overflow: hidden; }
           .hero-panel { display: none !important; }
         }
-        /* Mobile padding — recover viewport space */
+        /* Mobile padding — tighter, full-bleed feel */
         @media (max-width: 768px) {
-          .hero-section { padding: 80px 20px 48px !important; }
-          .hero-bio { margin-bottom: 24px !important; font-size: 0.95rem !important; }
+          .hero-section { padding: 88px 18px 40px !important; min-height: calc(100vh - 20px) !important; min-height: calc(100dvh - 20px) !important; overflow: hidden !important; }
+          .hero-bio { margin-bottom: 28px !important; font-size: 0.88rem !important; line-height: 1.75 !important; max-width: 100% !important; }
         }
-        /* CTA buttons — stack full-width on mobile for easy tap targets */
+        /* CTA buttons — full-width stacked on mobile, generous tap targets */
         @media (max-width: 500px) {
           .hero-ctas {
             flex-direction: column !important;
             align-items: stretch !important;
-            gap: 8px !important;
-            margin-bottom: 32px !important;
+            gap: 10px !important;
+            margin-bottom: 28px !important;
           }
           .hero-ctas a {
             justify-content: center !important;
             text-align: center !important;
-            padding: 14px 20px !important;
+            padding: 15px 20px !important;
+            font-size: 0.86rem !important;
           }
         }
-        /* Stats bar — 2×2 grid on mobile, remove vertical dividers */
+        /* Stats bar — 2×2 grid with accent cell borders */
         @media (max-width: 600px) {
           .hero-stats {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
-            gap: 16px 0 !important;
-            padding-top: 20px !important;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            gap: 0 !important;
+            padding-top: 0 !important;
+            border-top: 1px solid rgba(245,158,11,0.1) !important;
           }
           .hero-stats > div {
-            padding-right: 0 !important;
+            padding: 16px 14px !important;
             margin-right: 0 !important;
             border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
           }
+          /* Right column cells get left border */
+          .hero-stats > div:nth-child(2n) {
+            border-left: 1px solid rgba(255,255,255,0.04);
+          }
+          /* Remove bottom border on last row */
+          .hero-stats > div:nth-last-child(-n+2) {
+            border-bottom: none;
+          }
+        }
+        /* Very small screens: tighten heading */
+        @media (max-width: 380px) {
+          .hero-section h1 { font-size: clamp(2.6rem, 12vw, 3.2rem) !important; }
         }
       `}</style>
     </section>

@@ -186,8 +186,29 @@ export default function Contact() {
 
       <style>{`
         @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
-          .contact-cta { padding: 24px 20px !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .contact-cta {
+            padding: 24px 18px !important;
+            border-radius: 16px !important;
+          }
+          .contact-cta h3 {
+            font-size: 1.4rem !important;
+            margin-bottom: 10px !important;
+          }
+          .contact-cta p { font-size: 0.84rem !important; }
+          /* Contact cards tighter */
+          .contact-grid .icard { padding: 12px 14px !important; }
+        }
+        @media (max-width: 420px) {
+          /* Stack contact value below label on very small screens */
+          .contact-grid .icard > div:first-child {
+            width: 32px !important; height: 32px !important;
+          }
+          .contact-grid .icard > div:last-child p:last-child {
+            font-size: 0.8rem !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       `}</style>
     </section>

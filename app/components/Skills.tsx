@@ -157,12 +157,38 @@ export default function Skills() {
       </AnimateIn>
 
       <style>{`
-        @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2,1fr) !important; } }
-        @media (max-width: 520px) { .skills-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2,1fr) !important; gap: 10px !important; } }
+        @media (max-width: 520px) { .skills-grid { grid-template-columns: 1fr !important; gap: 10px !important; } }
         @media (max-width: 768px) {
-          .skill-card { padding: 18px 16px !important; }
-          .skills-pullquote { padding: 20px 18px !important; margin-top: 36px !important; }
-          .skills-pullquote p { font-size: 0.88rem !important; }
+          .skills-grid + div h2,
+          .skills-grid ~ h2 {
+            font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
+            line-height: 1.08 !important;
+          }
+          .skill-card {
+            padding: 16px 14px !important;
+            border-radius: 14px !important;
+          }
+          /* Compact icon row on mobile */
+          .skill-card > div:first-child {
+            margin-bottom: 14px !important;
+            gap: 10px !important;
+          }
+          .skill-card > div:first-child > div:first-child {
+            width: 36px !important; height: 36px !important;
+          }
+          /* Smaller item text */
+          .skill-card > div:last-child > div {
+            font-size: 0.8rem !important;
+            gap: 8px !important;
+          }
+          .skills-pullquote {
+            padding: 18px 16px !important;
+            margin-top: 28px !important;
+            border-radius: 0 12px 12px 0 !important;
+          }
+          .skills-pullquote p:first-child { font-size: 0.86rem !important; line-height: 1.7 !important; }
+          .skills-pullquote p:last-child { font-size: 0.6rem !important; margin-top: 10px !important; }
         }
       `}</style>
     </section>

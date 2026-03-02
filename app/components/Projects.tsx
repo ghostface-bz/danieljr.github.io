@@ -168,11 +168,25 @@ export default function Projects() {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          .projects-header { margin-bottom: 32px !important; }
+          .projects-header h2 {
+            font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
+            line-height: 1.08 !important;
+          }
+        }
         @media (max-width: 600px) {
-          .projects-header { margin-bottom: 40px !important; }
           .projects-header > div:last-child { width: 100% !important; }
           .projects-header > div:last-child a { width: 100% !important; justify-content: center !important; }
-          .proj-card { padding: 18px !important; gap: 14px !important; }
+          .proj-card {
+            padding: 18px !important;
+            gap: 14px !important;
+            border-radius: 14px !important;
+          }
+          .proj-card h3 { font-size: 1rem !important; }
+          .proj-card p { font-size: 0.82rem !important; }
+          /* Shrink the watermark ID on mobile */
+          .proj-card > span:first-child { font-size: 3.5rem !important; }
         }
       `}</style>
     </section>

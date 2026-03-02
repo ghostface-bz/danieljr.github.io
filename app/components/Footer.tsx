@@ -5,24 +5,24 @@ import { LogoMark } from "./Icons";
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="site-footer" style={{
       borderTop: "1px solid rgba(255,255,255,0.04)",
       padding: "24px 28px", position: "relative", zIndex: 1,
       background: "rgba(0,0,0,0.25)",
     }}>
-      <div style={{
+      <div className="footer-inner" style={{
         maxWidth: 1100, margin: "0 auto",
         display: "flex", justifyContent: "space-between", alignItems: "center",
         flexWrap: "wrap", gap: 14,
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div className="footer-brand" style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <LogoMark size={24} />
           <span style={{ fontFamily: "var(--font-mono)", color: "var(--text-faint)", fontSize: "0.7rem", letterSpacing: "0.06em" }}>
             © {new Date().getFullYear()} Daniel Junior Mahunda · Dar es Salaam, TZ
           </span>
         </div>
 
-        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+        <div className="footer-actions" style={{ display: "flex", gap: 6, alignItems: "center" }}>
           {/* 44×44px touch targets — mobile-design: Fitts' Law minimum */}
           {[
             { href: "https://github.com/ghostface-bz", icon: <Github size={16} />, target: "_blank" },
@@ -53,6 +53,20 @@ export default function Footer() {
           </button>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 480px) {
+          .site-footer { padding: 20px 18px !important; }
+          .footer-inner {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 16px !important;
+            text-align: center;
+          }
+          .footer-brand { flex-direction: column !important; gap: 6px !important; }
+          .footer-brand span { font-size: 0.6rem !important; }
+        }
+      `}</style>
     </footer>
   );
 }

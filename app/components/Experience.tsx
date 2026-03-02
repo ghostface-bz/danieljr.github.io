@@ -209,9 +209,26 @@ export default function Experience() {
 
       <style>{`
         @media (max-width: 768px) {
-          .exp-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
-          .exp-heading { margin-bottom: 36px !important; }
-          .exp-card { padding: 18px 18px 18px 22px !important; }
+          .exp-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .exp-heading {
+            margin-bottom: 32px !important;
+            font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
+            line-height: 1.08 !important;
+          }
+          .exp-card {
+            padding: 16px 16px 16px 20px !important;
+            border-radius: 14px !important;
+          }
+          .exp-card h3 { font-size: 0.9rem !important; }
+          .exp-card ul li { font-size: 0.8rem !important; line-height: 1.6 !important; }
+        }
+        /* Cert meta wrapping on small screens */
+        @media (max-width: 420px) {
+          .exp-card > div:first-child {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 4px !important;
+          }
         }
       `}</style>
     </section>
