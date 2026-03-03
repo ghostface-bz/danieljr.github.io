@@ -18,9 +18,9 @@
 
 ## `$ whoami`
 
-> IT professional forged in the field — **Tanzania Postal Services** and **Amana Regional Referral Hospital** — keeping critical infrastructure alive for real people. 🏥📮
+> IT professional shaped by real-world experience at **Tanzania Postal Services** and **Amana Regional Referral Hospital** — keeping critical infrastructure alive for real people. 🏥📮
 >
-> First-Class Academic Award holder. Currently building a **Phishing Awareness Academy** to turn the weakest security layer (humans 🧠) into the strongest.
+> I work across **web development**, **cybersecurity**, **system administration**, and **networking** — building things from the frontend all the way down to the cable. First-Class Academic Award holder, currently obsessed with closing the most exploited gap in any organization: the human one 🧠. That's why I'm building a **Phishing Awareness Academy** — to turn people from a vulnerability into a defence.
 >
 > *"Security is not a product — it's a process."*
 
