@@ -1,4 +1,4 @@
-<h1 align="center">Hey, I'm Daniel Junior Mahunda 👾</h1>
+<h1 align="center">Hey, I'm Daniel Junior 👾</h1>
 
 <p align="center">
   <em>IT Professional & Cybersecurity Enthusiast from Dar es Salaam, Tanzania 🇹🇿</em>
