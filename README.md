@@ -1,11 +1,8 @@
 <div align="center">
-```
-·▄▄▄▄   ▄▄▄·  ▐ ▄ ▪  ▄▄▄ .▄▄▌      ▄▄ •  ▄• ▄▌ ▐ ▄ ▪  ▄▄▄  
-██▪ ██ ▐█ ▀█ •█▌▐███ ▀▄.▀·██•      ▐█ ▀ ▪█▪██▌•█▌▐███ ▀▄ █·
-▐█· ▐█▌▄█▀▀█ ▐█▐▐▌▐█·▐▀▀▪▄██▪      ▄█ ▀█▄█▌▐█▌▐█▐▐▌▐█·▐▀▀▄ 
-██. ██ ▐█ ▪▐▌██▐█▌▐█▌▐█▄▄▌▐█▌▐▄    ▐█▄▪▐█▐█▄█▌██▐█▌▐█▌▐█•█▌
-▀▀▀▀▀•  ▀  ▀ ▀▀ █▪▀▀▀ ▀▀▀ .▀▀▀     ·▀▀▀▀  ▀▀▀ ▀▀ █▪▀▀▀.▀  ▀
-```
+
+[![capsule](https://capsule-render.vercel.app/api?type=waving&color=6c3483&height=160&section=header&text=Daniel%20Junior&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=IT%20%2F%20Cybersecurity%20·%20Dar%20es%20Salaam%2C%20TZ&descAlignY=60&descSize=16&animation=fadeIn)](https://ghostface-bz.github.io/danieljr.github.io/)
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=A855F7&center=true&vCenter=true&width=500&lines=IT+Professional+%F0%9F%92%BB;Cybersecurity+Enthusiast+%F0%9F%94%90;Building+Phishing+Academy+%F0%9F%8E%A3;Available+for+Opportunities+%F0%9F%9F%A2" alt="Typing SVG" />
 
 ### `> IT Professional & Cybersecurity Enthusiast`
 ### `> Dar es Salaam, Tanzania 🇹🇿 · Status: 🟢 Available`
