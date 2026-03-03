@@ -1,69 +1,110 @@
-<h1 align="center">Hey, I'm Daniel Junior 👾</h1>
+<div align="center">
 
-<p align="center">
-  <em>IT Professional & Cybersecurity Enthusiast from Dar es Salaam, Tanzania 🇹🇿</em>
-</p>
+```
+ ██████╗  █████╗ ███╗   ██╗██╗███████╗██╗
+ ██╔══██╗██╔══██╗████╗  ██║██║██╔════╝██║
+ ██║  ██║███████║██╔██╗ ██║██║█████╗  ██║
+ ██║  ██║██╔══██║██║╚██╗██║██║██╔══╝  ██║
+ ██████╔╝██║  ██║██║ ╚████║██║███████╗███████╗
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝
+```
 
-<p align="center">
-  <a href="https://ghostface-bz.github.io/danieljr.github.io/">
-    <img src="https://img.shields.io/badge/🌐 Portfolio-Visit Now-6c63ff?style=for-the-badge" />
-  </a>
-  <a href="mailto:lioneljr4444@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://github.com/ghostface-bz">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://wa.me/255613048858">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
-</p>
+### `> IT Professional & Cybersecurity Enthusiast`
+### `> Dar es Salaam, Tanzania 🇹🇿 · Status: 🟢 Available`
 
----
+[![Portfolio](https://img.shields.io/badge/⚡_PORTFOLIO-ghostface--bz.github.io-blueviolet?style=for-the-badge&labelColor=0d0d0d)](https://ghostface-bz.github.io/danieljr.github.io/)
+[![Email](https://img.shields.io/badge/📬_HIRE_ME-lioneljr4444@gmail.com-ff4757?style=for-the-badge&labelColor=0d0d0d)](mailto:lioneljr4444@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/💬_WHATSAPP-+255_613_048_858-25D366?style=for-the-badge&labelColor=0d0d0d)](https://wa.me/255613048858)
+[![GitHub](https://img.shields.io/badge/🐙_GITHUB-ghostface--bz-white?style=for-the-badge&labelColor=0d0d0d)](https://github.com/ghostface-bz)
 
-## 👨‍💻 About Me
-
-IT professional with hands-on field experience in **government & healthcare environments** (Tanzania Postal Services & Amana Regional Referral Hospital). First-Class Academic Award holder, obsessed with the **human side of security** — currently building a Phishing Awareness Academy as my Diploma capstone. 🔐
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## `$ whoami`
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" />
-  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-</p>
+> IT professional forged in the field — **Tanzania Postal Services** and **Amana Regional Referral Hospital** — keeping critical infrastructure alive for real people. 🏥📮
+>
+> First-Class Academic Award holder. Currently building a **Phishing Awareness Academy** to turn the weakest security layer (humans 🧠) into the strongest.
+>
+> *"Security is not a product — it's a process."*
 
 ---
 
-## 💼 Featured Projects
+## `$ cat tech-stack.sh`
 
-| # | Project | Description | Stack |
-|---|---------|-------------|-------|
-| 🟢 | **[NetScope](https://github.com/ghostface-bz)** | Network traffic inspector & anomaly detector | Rust, TCP/IP |
-| 🔄 | **Phishing Academy** | Enterprise phishing simulation & security training platform | PHP, MySQL, JS |
-| 🟢 | **[Endpoint Hardening](https://github.com/ghostface-bz)** | Linux security automation — firewall, malware scans, audits | Bash, Linux |
+<div align="center">
+
+**[ Operating Systems ]**
+
+[![My Skills](https://skillicons.dev/icons?i=linux,arch,kali,ubuntu,windows&theme=dark)](https://skillicons.dev)
+
+**[ Languages ]**
+
+[![My Skills](https://skillicons.dev/icons?i=python,js,php,java,c,bash,rust,html,css&theme=dark)](https://skillicons.dev)
+
+**[ Tools & Databases ]**
+
+[![My Skills](https://skillicons.dev/icons?i=mysql,git,github,vscode,vim,nextjs&theme=dark)](https://skillicons.dev)
+
+</div>
 
 ---
 
-## 🚀 Running Locally
+## `$ ls projects/`
+
+```
+📁 ~/projects
+├── 🟢 netscope/           — Rust network traffic inspector & anomaly detector
+├── 🔄 phishing-academy/   — Enterprise phishing simulation platform [IN PROGRESS]
+└── 🟢 endpoint-hardening/ — Linux security automation toolkit
+```
+
+| Project | Description | Stack | Link |
+|---------|-------------|-------|------|
+| 🔭 **NetScope** | Inspect traffic patterns, visualize topology, detect anomalies | `Rust` `TCP/IP` | [→ source](https://github.com/ghostface-bz) |
+| 🎣 **Phishing Academy** | Simulate attacks, track click rates, train employees | `PHP` `MySQL` `JS` | `🔒 private` |
+| 🛡️ **Endpoint Hardening** | Firewall rules, malware scans, permission audits via shell | `Bash` `Linux` | [→ source](https://github.com/ghostface-bz) |
+
+---
+
+## `$ cat experience.log`
+
+```yaml
+- role: IT Support Field Training
+  org:  Amana Regional Referral Hospital
+  date: Jun–Aug 2025
+  highlights:
+    - First-line support for hospital staff (hardware, software, LAN)
+    - Diagnosed TCP/IP, DHCP, DNS faults — cut network downtime
+    - OS hardening & malware scans across endpoints
+
+- role: IT Support Field Training
+  org:  Tanzania Postal Services (TPS)
+  date: Jun–Aug 2024
+  highlights:
+    - 12–20 help-desk requests/week
+    - Deployed workstations — OS install, drivers, provisioning
+    - LAN infrastructure & preventive hardware maintenance
+```
+
+---
+
+## `$ git clone portfolio`
 
 ```bash
 git clone https://github.com/ghostface-bz/danieljr.github.io.git
 cd danieljr.github.io
 npm install && npm run dev
+# → http://localhost:3000 🚀
 ```
-
-Open [http://localhost:3000](http://localhost:3000) 🎉
 
 ---
 
-<p align="center">
-  📍 Dar es Salaam, TZ &nbsp;|&nbsp; 🟢 Available for opportunities &nbsp;|&nbsp; Made with ❤️ by <strong>Daniel Junior</strong>
-</p>
+<div align="center">
+
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=ghostface-bz.danieljr.github.io&left_color=blueviolet&right_color=0d0d0d&left_text=👁️%20profile%20views)
+
+`© 2026 Daniel Junior Mahunda · Dar es Salaam, TZ · Built with Next.js`
+
+</div>
